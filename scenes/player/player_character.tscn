@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://w432ihh47w5h"]
 
 [ext_resource type="Script" uid="uid://dnndnr36m6g7m" path="res://assets/scripts/player/player_character.gd" id="1_auamg"]
+[ext_resource type="FontFile" uid="uid://cxs2e8e30jdmp" path="res://assets/fonts/Not Jam Signature 21.ttf" id="2_0icub"]
+[ext_resource type="Script" uid="uid://bv18ikgm625br" path="res://assets/scripts/ui/timer_hud.gd" id="2_e1j0t"]
+[ext_resource type="Script" uid="uid://cg5ait4a70cq" path="res://assets/scripts/system/game_timer.gd" id="2_eebfp"]
+[ext_resource type="Script" uid="uid://ba1fikwa47tcx" path="res://assets/scripts/ui/score_hud.gd" id="2_s66ro"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kps3k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0yd1l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sc5ad"]
+radius = 0.675
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=55011062]
 script = ExtResource("1_auamg")
@@ -17,16 +24,52 @@ shape = SubResource("CapsuleShape3D_0yd1l")
 
 [node name="PlayerVision" type="Camera3D" parent="." unique_id=121418408]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52176213, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52176213, -0.29205525)
 fov = 100.0
 far = 600.0
 
 [node name="ScoreHUD" type="Label" parent="PlayerVision" unique_id=144996069]
 unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 198.0
+offset_top = 1.0
+offset_right = 243.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8558844, 0.66796803, 0.08358414, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_0icub")
+theme_override_font_sizes/font_size = 50
+script = ExtResource("2_s66ro")
 
 [node name="TimerHUD" type="Label" parent="PlayerVision" unique_id=1472956971]
 unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -207.0
+offset_top = 1.0
+offset_right = -167.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.253823, 0.45889598, 0.29984215, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_0icub")
+theme_override_font_sizes/font_size = 50
+script = ExtResource("2_e1j0t")
+
+[node name="GameTimer" type="Timer" parent="PlayerVision/TimerHUD" unique_id=862255664]
+unique_name_in_owner = true
+script = ExtResource("2_eebfp")
+
+[node name="HurtPickupZone" type="Area3D" parent="." unique_id=1176982973 groups=["player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtPickupZone" unique_id=846013412]
+shape = SubResource("CapsuleShape3D_sc5ad")
+debug_color = Color(0.9600989, 0.19265047, 0.15705389, 0.41960785)

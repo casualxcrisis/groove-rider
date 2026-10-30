@@ -8,7 +8,7 @@ var jump_force = 20
 var grav_scale = 1
 var steer_speed = 10
 
-#score
+###Score###
 var current_score = 0
 var high_score = 0
 

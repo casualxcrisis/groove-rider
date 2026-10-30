@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://nnlnd26n5u56"]
+
+[ext_resource type="Texture2D" uid="uid://dvinooxnsxaga" path="res://assets/placeholder_images/impatient-businessman-checks-his-watch-isolated-on-white-C5MYX6.jpg" id="1_a10f7"]
+
+[node name="TempGameOver" type="Node2D" unique_id=929966489]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=19586021]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.92, 0.76)
+texture = ExtResource("1_a10f7")
+
+[node name="Label" type="Label" parent="." unique_id=2097211081]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.90265346, 0.43152195, 0.972984, 1)
+theme_override_font_sizes/font_size = 58
+text = "HMMMM. Looks like you ran out of time...."

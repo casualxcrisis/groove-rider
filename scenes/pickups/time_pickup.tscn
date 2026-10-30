@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://8oe2isjai8x0"]
+
+[ext_resource type="Script" uid="uid://cw34n00eto1cc" path="res://assets/scripts/pickups/time_pickup.gd" id="1_r2k5g"]
+[ext_resource type="Texture2D" uid="uid://cuguounvr7n3d" path="res://assets/models/Alarmclock_initialShadingGroup_Roughness.png" id="1_xb4mb"]
+[ext_resource type="ArrayMesh" uid="uid://bobcgini5kggq" path="res://assets/models/Subs Alrmclck.obj" id="2_r2k5g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qtoj4"]
+albedo_texture = ExtResource("1_xb4mb")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kps3k"]
+radius = 0.915
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0yd1l"]
+radius = 2.18
+
+[node name="TimePickup" type="RigidBody3D" unique_id=652631195]
+script = ExtResource("1_r2k5g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1017513852]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_qtoj4")
+mesh = ExtResource("2_r2k5g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1479323072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.21011156)
+shape = SubResource("SphereShape3D_kps3k")
+
+[node name="PickupZone" type="Area3D" parent="." unique_id=1684280238]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupZone" unique_id=1634149274]
+shape = SubResource("SphereShape3D_0yd1l")
+debug_color = Color(0.93171865, 0.25656095, 0.1391421, 0.41960785)

@@ -42,30 +42,4 @@ func _physics_process(delta: float) -> void:
 		$PlayerVision.rotation.z = lerp(current_rot, rotation_right, cam_acceleration * delta) 
 	if Input.is_action_just_released("move_right"):
 		%PlayerVision.rotation.z = deg_to_rad(0.0) 
-
-	#var mouse_pos = get_viewport().get_mouse_position()
-	#if mouse_pos.x > 600:
-		#velocity.x = steer_speed
-	#if mouse_pos.x < 600:
-		#velocity.x = -steer_speed
-	#if mouse_pos.x == 500:
-		#velocity.x = 0
-	#var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	#var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	#if direction:
-		#velocity.x = direction.x * steer_speed
-		#velocity.z = direction.z * steer_speed
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, steer_speed)
-		#velocity.z = move_toward(velocity.z, 0, steer_speed)	
 	move_and_slide()
-
-#func _input(event: InputEvent) -> void:
-	#if event is InputEventMouseMotion:
-		#var mouse_pos = get_viewport().get_mouse_position()
-		#if mouse_pos.x > 600:
-			#velocity.x = steer_speed
-		#if mouse_pos.x < 600:
-			#velocity.x = -steer_speed
-		#if mouse_pos.x == 500:
-			#velocity.x = 0

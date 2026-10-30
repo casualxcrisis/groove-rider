@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://dyj0rf32exito" path="res://addons/unibuilder/core/ub_face.gd" id="2_bag3q"]
 [ext_resource type="Script" uid="uid://dnaqomcyqdloo" path="res://addons/unibuilder/core/ub_mesh_data.gd" id="3_fm0qp"]
 [ext_resource type="PackedScene" uid="uid://w432ihh47w5h" path="res://scenes/player/player_character.tscn" id="4_b42dc"]
+[ext_resource type="PackedScene" uid="uid://dhur0b4l8j6ni" path="res://scenes/pickups/pickup_coin_small.tscn" id="6_fm0qp"]
+[ext_resource type="AudioStream" uid="uid://boumjcw7bwd1v" path="res://assets/sounds/music.wav" id="7_b42dc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm0qp"]
 albedo_texture = ExtResource("1_bag3q")
@@ -71,7 +73,15 @@ mesh_data = SubResource("Resource_e24dv")
 collision_mode = 2
 
 [node name="PlayerCharacter" parent="." unique_id=55011062 instance=ExtResource("4_b42dc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.40877, 1.0000019, -163.17526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.40877, 1.3613777, -163.17526)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1019091889]
 environment = SubResource("Environment_0yd1l")
+
+[node name="PickupCoinSmall" parent="." unique_id=1019336120 instance=ExtResource("6_fm0qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.303867, 0.94746864, -167.57825)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer3D" parent="." unique_id=1558881927]
+stream = ExtResource("7_b42dc")
+volume_db = 21.053
+autoplay = true
