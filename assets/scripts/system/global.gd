@@ -2,10 +2,12 @@ extends Node
 
 ###Player###
 #movement attributes
-var grav_scale = 10
 var fwd_speed = -8.0
+var fall_accel = 65
+var jump_force = 20
+var grav_scale = 1
 var steer_speed = 10
-var jump_force = 10
+
 #score
 var current_score = 0
 var high_score = 0
