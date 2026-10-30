@@ -8,25 +8,17 @@
 albedo_texture = ExtResource("1_xb4mb")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kps3k"]
-radius = 0.915
+radius = 0.305
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_0yd1l"]
-radius = 2.18
-
-[node name="TimePickup" type="RigidBody3D" unique_id=652631195]
+[node name="TimePickup" type="RigidBody3D" unique_id=652631195 groups=["time_pickup"]]
 script = ExtResource("1_r2k5g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1017513852]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+transform = Transform3D(0.0018374672, 0, 0, 0, 0.0018840923, 0, 0, 0, 0.0031927729, 0, 0, -0.18375874)
 material_override = SubResource("StandardMaterial3D_qtoj4")
 mesh = ExtResource("2_r2k5g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1479323072]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.21011156)
 shape = SubResource("SphereShape3D_kps3k")
-
-[node name="PickupZone" type="Area3D" parent="." unique_id=1684280238]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupZone" unique_id=1634149274]
-shape = SubResource("SphereShape3D_0yd1l")
-debug_color = Color(0.93171865, 0.25656095, 0.1391421, 0.41960785)
+debug_color = Color(0.899834, 0.29337546, 0.29099932, 0.41960785)

@@ -30,6 +30,7 @@ enabled=PackedStringArray("res://addons/unibuilder/plugin.cfg")
 [global_group]
 
 player=""
+time_pickup=""
 
 [input]
 
