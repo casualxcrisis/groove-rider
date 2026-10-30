@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w432ihh47w5h"]
 
-[ext_resource type="Script" uid="uid://dnndnr36m6g7m" path="res://scenes/player/player_character.gd" id="1_auamg"]
+[ext_resource type="Script" uid="uid://dnndnr36m6g7m" path="res://assets/scripts/player/player_character.gd" id="1_auamg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kps3k"]
 
@@ -14,3 +14,7 @@ mesh = SubResource("CapsuleMesh_kps3k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=89652459]
 shape = SubResource("CapsuleShape3D_0yd1l")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=121418408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52176213, 0)
+fov = 100.0

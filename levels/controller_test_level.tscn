@@ -1,0 +1,77 @@
+[gd_scene format=4 uid="uid://b36gkk4jycgju"]
+
+[ext_resource type="Texture2D" uid="uid://4hpjaj4ax3he" path="res://assets/textures/Prototyping Textures (32px)/Prototype_checkers_04_32x32px.png" id="1_bag3q"]
+[ext_resource type="Script" uid="uid://cp01tx4fxrgim" path="res://addons/unibuilder/nodes/ub_mesh_instance.gd" id="1_vdra7"]
+[ext_resource type="Script" uid="uid://dyj0rf32exito" path="res://addons/unibuilder/core/ub_face.gd" id="2_bag3q"]
+[ext_resource type="Script" uid="uid://dnaqomcyqdloo" path="res://addons/unibuilder/core/ub_mesh_data.gd" id="3_fm0qp"]
+[ext_resource type="PackedScene" uid="uid://w432ihh47w5h" path="res://scenes/player/player_character.tscn" id="4_b42dc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm0qp"]
+albedo_texture = ExtResource("1_bag3q")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5shsf"]
+lightmap_size_hint = Vector2i(4094, 650)
+_surfaces = [{
+"aabb": AABB(-97.5, 0, -616.5, 195, 1e-05, 1233),
+"attribute_data": PackedByteArray("/////wAAw8IAIBpE/vd/Pzapfz//////AADDwgAgGsQCEAA5Nql/P/////8AAMNCACAaxAIQADk0pkk6/////wAAw0IAIBpE/vd/PzSmSTo="),
+"format": 34359742527,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AADDwgAAAAAAIBpEAADDwgAAAAAAIBrEAADDQgAAAAAAIBrEAADDQgAAAAAAIBpEAID//////78AgP//////vwCA//////+/AID//////78=")
+}]
+metadata/ub_uv2_texel = 0.2
+metadata/ub_uv2_scale = Vector3(1, 1, 1)
+metadata/ub_compile_hash = 966337686
+
+[sub_resource type="Resource" id="Resource_3mkhn"]
+script = ExtResource("2_bag3q")
+vertices = PackedInt32Array(0, 1, 3, 2)
+uv_coords = PackedVector2Array()
+color_corners = PackedColorArray()
+
+[sub_resource type="Resource" id="Resource_e24dv"]
+script = ExtResource("3_fm0qp")
+positions = PackedVector3Array(-97.5, 0, -616.5, 97.5, 0, -616.5, -97.5, 0, 616.5, 97.5, 0, 616.5)
+faces = Array[ExtResource("2_bag3q")]([SubResource("Resource_3mkhn")])
+shape_spec = {
+"base": true,
+"dims": {
+"ah": 0.001,
+"su": 195.0,
+"sv": 1233.0
+},
+"kind": 1,
+"params": {
+"div_u": 1,
+"div_v": 1
+}
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sc5ad"]
+
+[sub_resource type="Sky" id="Sky_kps3k"]
+sky_material = SubResource("ProceduralSkyMaterial_sc5ad")
+
+[sub_resource type="Environment" id="Environment_0yd1l"]
+background_mode = 2
+background_energy_multiplier = 1.92
+sky = SubResource("Sky_kps3k")
+
+[node name="ControllerTestLevel" type="Node3D" unique_id=795995372]
+
+[node name="UBPlane" type="MeshInstance3D" parent="." unique_id=1469787259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -616.5)
+material_override = SubResource("StandardMaterial3D_fm0qp")
+mesh = SubResource("ArrayMesh_5shsf")
+script = ExtResource("1_vdra7")
+mesh_data = SubResource("Resource_e24dv")
+collision_mode = 2
+
+[node name="PlayerCharacter" parent="." unique_id=55011062 instance=ExtResource("4_b42dc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.40877, 1.0000019, -163.17526)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1019091889]
+environment = SubResource("Environment_0yd1l")
