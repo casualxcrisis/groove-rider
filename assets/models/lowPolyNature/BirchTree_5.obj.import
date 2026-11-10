@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://khqwc0mnffvt"
+path="res://.godot/imported/BirchTree_5.obj-79ad35ce5a0ee6ae3487dffe20a306fb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BirchTree_5.obj-79ad35ce5a0ee6ae3487dffe20a306fb.mesh"]
+
+source_file="res://assets/models/lowPolyNature/BirchTree_5.obj"
+dest_files=["res://.godot/imported/BirchTree_5.obj-79ad35ce5a0ee6ae3487dffe20a306fb.mesh", "res://.godot/imported/BirchTree_5.obj-79ad35ce5a0ee6ae3487dffe20a306fb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -4,7 +4,10 @@
 [ext_resource type="FontFile" uid="uid://cxs2e8e30jdmp" path="res://assets/fonts/Not Jam Signature 21.ttf" id="2_0icub"]
 [ext_resource type="Script" uid="uid://bv18ikgm625br" path="res://assets/scripts/ui/timer_hud.gd" id="2_e1j0t"]
 [ext_resource type="Script" uid="uid://cg5ait4a70cq" path="res://assets/scripts/system/game_timer.gd" id="2_eebfp"]
-[ext_resource type="Script" uid="uid://ba1fikwa47tcx" path="res://assets/scripts/ui/score_hud.gd" id="2_s66ro"]
+[ext_resource type="Texture2D" uid="uid://bq77qhbmwi0ns" path="res://assets/textures/Prototyping Textures (32px)/Prototype_checkers_01_32x32px.png" id="2_ryjgy"]
+[ext_resource type="Script" uid="uid://ba1fikwa47tcx" path="res://assets/scripts/ui/water_lvl_hud.gd" id="2_s66ro"]
+[ext_resource type="Texture2D" uid="uid://c3cyq4nr5ns62" path="res://assets/textures/Prototyping Textures (32px)/Prototype_blue_32x32px.png" id="3_wvac4"]
+[ext_resource type="Script" uid="uid://cigrwo84hcrnf" path="res://assets/scripts/ui/water_lvl_bar.gd" id="4_wvac4"]
 [ext_resource type="AudioStream" uid="uid://c212kafpnj1mp" path="res://assets/sounds/611113__5ro4__bell-ding-1.wav" id="6_ocp37"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kps3k"]
@@ -29,15 +32,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52176213, -0.29205525)
 fov = 100.0
 far = 600.0
 
-[node name="ScoreHUD" type="Label" parent="PlayerVision" unique_id=144996069]
+[node name="InGameUI" type="Control" parent="PlayerVision" unique_id=1354605619]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WaterLvlHUD" type="TextureProgressBar" parent="PlayerVision/InGameUI" unique_id=1751432843]
 unique_name_in_owner = true
+layout_mode = 0
+offset_left = 945.0
+offset_top = 4.0
+offset_right = 1116.27
+offset_bottom = 44.0
+rounded = true
+nine_patch_stretch = true
+texture_under = ExtResource("2_ryjgy")
+texture_progress = ExtResource("3_wvac4")
+script = ExtResource("4_wvac4")
+
+[node name="WaterLevelHUD" type="Label" parent="PlayerVision/InGameUI" unique_id=144996069]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 198.0
+offset_left = 754.0
 offset_top = 1.0
-offset_right = 243.0
-offset_bottom = 24.0
+offset_right = 799.0
+offset_bottom = 52.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.8558844, 0.66796803, 0.08358414, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -47,15 +70,16 @@ theme_override_fonts/font = ExtResource("2_0icub")
 theme_override_font_sizes/font_size = 50
 script = ExtResource("2_s66ro")
 
-[node name="TimerHUD" type="Label" parent="PlayerVision" unique_id=1472956971]
+[node name="TimerHUD" type="Label" parent="PlayerVision/InGameUI" unique_id=1472956971]
 unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -207.0
+offset_left = 349.0
 offset_top = 1.0
-offset_right = -167.0
-offset_bottom = 24.0
+offset_right = 389.0
+offset_bottom = 52.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.253823, 0.45889598, 0.29984215, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -65,7 +89,7 @@ theme_override_fonts/font = ExtResource("2_0icub")
 theme_override_font_sizes/font_size = 50
 script = ExtResource("2_e1j0t")
 
-[node name="GameTimer" type="Timer" parent="PlayerVision/TimerHUD" unique_id=862255664]
+[node name="GameTimer" type="Timer" parent="PlayerVision/InGameUI/TimerHUD" unique_id=862255664]
 unique_name_in_owner = true
 script = ExtResource("2_eebfp")
 
@@ -80,4 +104,4 @@ unique_name_in_owner = true
 stream = ExtResource("6_ocp37")
 volume_db = -5.266
 
-[connection signal="body_entered" from="HurtPickupZone" to="PlayerVision/TimerHUD/GameTimer" method="_on_hurt_pickup_zone_body_entered"]
+[connection signal="body_entered" from="HurtPickupZone" to="PlayerVision/InGameUI/TimerHUD/GameTimer" method="_on_hurt_pickup_zone_body_entered"]

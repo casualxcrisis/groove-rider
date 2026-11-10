@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	velocity = target_velocity
 	#slop cont.
 	if start_buffer:
-		velocity.z = move_toward(0, 4, speed)
+		velocity.z = speed
 	#jump
 	if not is_on_floor():
 		target_velocity.y = target_velocity.y - (fall_accel * delta)
@@ -33,13 +33,17 @@ func _physics_process(delta: float) -> void:
 		target_velocity.y = jump_force
 	#steering
 	if Input.is_action_pressed("move_left"):
-		velocity.x = -move_toward(0, 50, 10)
+		velocity.x = -move_toward(0, 50, 5)
+		%PlayerVision.rotation.y = lerp(current_rot, rotation_left, cam_acceleration * delta)
 		%PlayerVision.rotation.z = lerp(current_rot, rotation_left, cam_acceleration * delta)
 	if Input.is_action_just_released("move_left"):
+		$PlayerVision.rotation.y = current_rot
 		$PlayerVision.rotation.z = current_rot 
 	if Input.is_action_pressed("move_right"):
-		velocity.x = move_toward(0, 50, 10)
+		velocity.x = move_toward(0, 50, 5)
+		$PlayerVision.rotation.y = lerp(current_rot, rotation_right, cam_acceleration * delta)
 		$PlayerVision.rotation.z = lerp(current_rot, rotation_right, cam_acceleration * delta) 
 	if Input.is_action_just_released("move_right"):
-		%PlayerVision.rotation.z = deg_to_rad(0.0) 
+		%PlayerVision.rotation.y = current_rot
+		%PlayerVision.rotation.z = current_rot 
 	move_and_slide()

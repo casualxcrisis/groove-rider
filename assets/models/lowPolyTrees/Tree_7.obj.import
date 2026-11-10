@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bk6ckr3qoyv8s"
+path="res://.godot/imported/Tree_7.obj-8a0286a601a32e735132a738c03a928e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tree_7.obj-8a0286a601a32e735132a738c03a928e.mesh"]
+
+source_file="res://assets/models/lowPolyTrees/Tree_7.obj"
+dest_files=["res://.godot/imported/Tree_7.obj-8a0286a601a32e735132a738c03a928e.mesh", "res://.godot/imported/Tree_7.obj-8a0286a601a32e735132a738c03a928e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
