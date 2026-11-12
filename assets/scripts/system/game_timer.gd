@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	print(%GameTimer.time_left)
+	#print(%GameTimer.time_left)
 	if %GameTimer.time_left == 0.0:
 		get_tree().change_scene_to_file("res://levels/temp_game_over.tscn")
 
