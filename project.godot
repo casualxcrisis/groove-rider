@@ -30,7 +30,8 @@ enabled=PackedStringArray("res://addons/unibuilder/plugin.cfg")
 [global_group]
 
 player=""
-time_pickup=""
+big_water=""
+small_water=""
 
 [input]
 

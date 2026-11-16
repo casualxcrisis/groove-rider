@@ -38,4 +38,4 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		%PlayerVision.rotate_y(-event.relative.x * 0.006)
-		%PlayerVision.rotation.y = clamp(%PlayerVision.rotation.y, deg_to_rad(-30), deg_to_rad(30))
+		%PlayerVision.rotation.y = clamp(%PlayerVision.rotation.y, deg_to_rad(-40), deg_to_rad(40))

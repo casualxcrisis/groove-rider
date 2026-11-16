@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://4hpjaj4ax3he" path="res://assets/textures/Prototyping Textures (32px)/Prototype_checkers_04_32x32px.png" id="1_bag3q"]
 [ext_resource type="Script" uid="uid://cp01tx4fxrgim" path="res://addons/unibuilder/nodes/ub_mesh_instance.gd" id="1_vdra7"]
-[ext_resource type="Material" path="res://addons/psx_skyboxes_2/materials/aurora_green.tres" id="2_5shsf"]
+[ext_resource type="Material" path="res://addons/psx_skyboxes_2/materials/cube/hell_red.tres" id="2_b42dc"]
 [ext_resource type="Script" uid="uid://dyj0rf32exito" path="res://addons/unibuilder/core/ub_face.gd" id="2_bag3q"]
 [ext_resource type="Script" uid="uid://dnaqomcyqdloo" path="res://addons/unibuilder/core/ub_mesh_data.gd" id="3_fm0qp"]
 [ext_resource type="PackedScene" uid="uid://w432ihh47w5h" path="res://scenes/player/player_character.tscn" id="4_b42dc"]
 [ext_resource type="PackedScene" uid="uid://dhur0b4l8j6ni" path="res://scenes/pickups/water_pickup.tscn" id="9_3mkhn"]
 
 [sub_resource type="Sky" id="Sky_kps3k"]
-sky_material = ExtResource("2_5shsf")
+sky_material = ExtResource("2_b42dc")
 radiance_size = 2
 
 [sub_resource type="Environment" id="Environment_0yd1l"]
@@ -67,7 +67,7 @@ shape_spec = {
 [node name="PlayerCharacter" parent="." unique_id=55011062 instance=ExtResource("4_b42dc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.86041, 1, -164.66275)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1019091889]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1019091889 groups=["time_pickup"]]
 environment = SubResource("Environment_0yd1l")
 
 [node name="UBPlane" type="MeshInstance3D" parent="." unique_id=532448333]
@@ -79,4 +79,4 @@ mesh_data = SubResource("Resource_qatqk")
 collision_mode = 2
 
 [node name="WaterPickup" parent="." unique_id=1019336120 instance=ExtResource("9_3mkhn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.91697, 0.60992604, -203.2165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.839718, 0.60992604, -171.52774)

@@ -53,7 +53,7 @@ radius = 0.805
 [sub_resource type="SphereShape3D" id="SphereShape3D_0yd1l"]
 radius = 0.74156106
 
-[node name="WaterPickup" type="RigidBody3D" unique_id=1019336120]
+[node name="WaterPickup" type="RigidBody3D" unique_id=1019336120 groups=["small_water"]]
 script = ExtResource("1_n6dcp")
 
 [node name="DropModel" type="MeshInstance3D" parent="." unique_id=389935128]
