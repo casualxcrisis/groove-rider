@@ -23,7 +23,6 @@ shader_parameter/resolution = 64.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_0yd1l"]
 material = SubResource("ShaderMaterial_kps3k")
-size = Vector2(3.92, 4.98)
 
 [node name="Fire" type="MeshInstance3D" unique_id=1400787278]
 mesh = SubResource("QuadMesh_0yd1l")

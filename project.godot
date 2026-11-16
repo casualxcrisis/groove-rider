@@ -32,6 +32,8 @@ enabled=PackedStringArray("res://addons/unibuilder/plugin.cfg")
 player=""
 big_water=""
 small_water=""
+big_fire=""
+small_fire=""
 
 [input]
 

@@ -11,6 +11,8 @@ var steer_speed = -8
 var water_lvl = 0
 var high_score = 0
 var fire_score = 0
+var big_fire_cost = 10
+var small_fire_cost = 5
 var small_fire_pts = 5
 var big_fire_pts = 15
 

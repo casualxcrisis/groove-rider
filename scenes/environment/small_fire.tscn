@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ctdbmygbjoy87"]
+
+[ext_resource type="Shader" uid="uid://ofag0e4f06xs" path="res://assets/shaders/fire.gdshader" id="1_mlu7p"]
+[ext_resource type="Texture2D" uid="uid://c3f2qasjwc8ro" path="res://assets/placeholder_images/flame.png" id="2_8472u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0yd1l"]
+size = Vector3(0.52490234, 0.74560547, 0.5008545)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cu4ke"]
+seed = 55
+frequency = 0.0072
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sc5ad"]
+noise = SubResource("FastNoiseLite_cu4ke")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kps3k"]
+render_priority = 0
+shader = ExtResource("1_mlu7p")
+shader_parameter/albedo_texture = ExtResource("2_8472u")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_sc5ad")
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/intensity = 0.7
+shader_parameter/framerate = 59.975
+shader_parameter/resolution = 64.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_0yd1l"]
+material = SubResource("ShaderMaterial_kps3k")
+
+[node name="SmallFire" type="StaticBody3D" unique_id=1334054306 groups=["small_fire"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1660516178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012207031, 0.12719727, 0.0012817383)
+shape = SubResource("BoxShape3D_0yd1l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=934497530]
+mesh = SubResource("QuadMesh_0yd1l")
