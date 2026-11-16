@@ -10,11 +10,6 @@ var target_velocity = Vector3.ZERO
 
 var start_buffer = false
 
-###Camera###
-var current_rot = deg_to_rad(0.0)
-var rotation_left = deg_to_rad(-3.5)
-var rotation_right = deg_to_rad(3.5)
-var cam_acceleration = 20
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -35,7 +30,7 @@ func _physics_process(delta: float) -> void:
 		%PlayerVision.rotation.z = lerp(%PlayerVision.rotation.z, deg_to_rad(-12.4), deg_to_rad(1.0))
 	else:
 		var current_rot = %PlayerVision.rotation.z
-		%PlayerVision.rotation.z = lerp(current_rot, deg_to_rad(0.0), deg_to_rad(1.0))
+		%PlayerVision.rotation.z = lerp(current_rot, deg_to_rad(0.0), deg_to_rad(3.0))
 	
 	if not is_on_floor():
 		target_velocity.y = target_velocity.y - (fall_accel * delta)

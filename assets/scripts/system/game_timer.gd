@@ -14,8 +14,10 @@ func _process(_delta: float) -> void:
 
 func _on_hurt_pickup_zone_body_entered(body: Node3D) -> void:
 	if body.is_in_group("big_water"):
+		%WaterSound.play()
 		%GameTimer.start(%GameTimer.time_left + Global.big_water)
 		body.queue_free()
 	elif body.is_in_group("small_water"):
+		%WaterSound.play()
 		%GameTimer.start(%GameTimer.time_left + Global.small_water)
 		body.queue_free()

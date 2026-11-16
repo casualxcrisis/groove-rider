@@ -4,9 +4,10 @@
 [ext_resource type="FontFile" uid="uid://cxs2e8e30jdmp" path="res://assets/fonts/Not Jam Signature 21.ttf" id="2_0icub"]
 [ext_resource type="Script" uid="uid://cg5ait4a70cq" path="res://assets/scripts/system/game_timer.gd" id="2_eebfp"]
 [ext_resource type="Texture2D" uid="uid://bq77qhbmwi0ns" path="res://assets/textures/Prototyping Textures (32px)/Prototype_checkers_01_32x32px.png" id="2_ryjgy"]
-[ext_resource type="Script" uid="uid://ba1fikwa47tcx" path="res://assets/scripts/ui/water_lvl_hud.gd" id="2_s66ro"]
+[ext_resource type="Script" uid="uid://ba1fikwa47tcx" path="res://assets/scripts/ui/fire_score_hud.gd" id="2_s66ro"]
 [ext_resource type="Texture2D" uid="uid://c3cyq4nr5ns62" path="res://assets/textures/Prototyping Textures (32px)/Prototype_blue_32x32px.png" id="3_wvac4"]
 [ext_resource type="Script" uid="uid://cigrwo84hcrnf" path="res://assets/scripts/ui/water_lvl_bar.gd" id="4_wvac4"]
+[ext_resource type="AudioStream" uid="uid://bi58fcg8tpsrd" path="res://assets/sounds/water_drop.wav" id="8_ryjgy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kps3k"]
 
@@ -77,5 +78,10 @@ script = ExtResource("2_s66ro")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtPickupZone" unique_id=846013412]
 shape = SubResource("CapsuleShape3D_sc5ad")
 debug_color = Color(0.9600989, 0.19265047, 0.15705389, 0.41960785)
+
+[node name="WaterSound" type="AudioStreamPlayer3D" parent="." unique_id=410831265]
+unique_name_in_owner = true
+stream = ExtResource("8_ryjgy")
+volume_db = -28.396
 
 [connection signal="body_entered" from="HurtPickupZone" to="PlayerVision/InGameUI/WaterLvlHUD/GameTimer" method="_on_hurt_pickup_zone_body_entered"]

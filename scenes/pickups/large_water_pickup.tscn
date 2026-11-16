@@ -1,8 +1,7 @@
-[gd_scene format=4 uid="uid://dhur0b4l8j6ni"]
+[gd_scene format=4 uid="uid://bpql52qj7vm4l"]
 
-[ext_resource type="Script" uid="uid://bjkk2suyjxina" path="res://assets/scripts/pickups/water_pickup.gd" id="1_n6dcp"]
-[ext_resource type="Texture2D" uid="uid://bwl5nho4ssak5" path="res://assets/models/water-droplet/source/8b6a4fe3-0727-42cf-a826-5ad2ce5418fa_shaded.png" id="2_n6dcp"]
-[ext_resource type="AudioStream" uid="uid://bi58fcg8tpsrd" path="res://assets/sounds/water_drop.wav" id="3_46304"]
+[ext_resource type="Script" uid="uid://bjkk2suyjxina" path="res://assets/scripts/pickups/water_pickup.gd" id="1_elrqa"]
+[ext_resource type="Texture2D" uid="uid://bwl5nho4ssak5" path="res://assets/models/water-droplet/source/8b6a4fe3-0727-42cf-a826-5ad2ce5418fa_shaded.png" id="2_obyn3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytxn0"]
 resource_name = "CustomMaterial"
@@ -11,7 +10,7 @@ albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_operator = 1
-emission_texture = ExtResource("2_n6dcp")
+emission_texture = ExtResource("2_obyn3")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yb7ol"]
 _surfaces = [{
@@ -53,11 +52,11 @@ radius = 0.805
 [sub_resource type="SphereShape3D" id="SphereShape3D_0yd1l"]
 radius = 0.74156106
 
-[node name="WaterPickup" type="RigidBody3D" unique_id=1019336120 groups=["small_water"]]
-script = ExtResource("1_n6dcp")
+[node name="LargeWaterPickup" type="RigidBody3D" unique_id=1019336120 groups=["big_water"]]
+script = ExtResource("1_elrqa")
 
 [node name="DropModel" type="MeshInstance3D" parent="." unique_id=389935128]
-transform = Transform3D(0.605, 0, 0, 0, -2.644539e-08, -0.605, 0, 0.605, -2.644539e-08, 0, -0.032397896, 0)
+transform = Transform3D(1.057813, 0, 0, 0, -4.336738e-08, -0.605, 0, 0.99213, -2.644539e-08, 0, -0.032397896, 0)
 mesh = SubResource("ArrayMesh_bd3tp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1774942955]
@@ -70,10 +69,3 @@ shape = SubResource("SphereShape3D_xy0ms")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040204465, -0.061888665, 0)
 shape = SubResource("SphereShape3D_0yd1l")
 debug_color = Color(0.99107593, 0, 0.27616704, 0.41960785)
-
-[node name="CollectSound" type="AudioStreamPlayer3D" parent="." unique_id=2138831282]
-unique_name_in_owner = true
-stream = ExtResource("3_46304")
-volume_db = -28.396
-
-[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]

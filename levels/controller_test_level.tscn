@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://dyj0rf32exito" path="res://addons/unibuilder/core/ub_face.gd" id="2_bag3q"]
 [ext_resource type="Script" uid="uid://dnaqomcyqdloo" path="res://addons/unibuilder/core/ub_mesh_data.gd" id="3_fm0qp"]
 [ext_resource type="PackedScene" uid="uid://w432ihh47w5h" path="res://scenes/player/player_character.tscn" id="4_b42dc"]
-[ext_resource type="PackedScene" uid="uid://dhur0b4l8j6ni" path="res://scenes/pickups/water_pickup.tscn" id="9_3mkhn"]
+[ext_resource type="PackedScene" uid="uid://bpql52qj7vm4l" path="res://scenes/pickups/large_water_pickup.tscn" id="8_5shsf"]
+[ext_resource type="PackedScene" uid="uid://dhur0b4l8j6ni" path="res://scenes/pickups/small_water_pickup.tscn" id="9_3mkhn"]
+[ext_resource type="PackedScene" uid="uid://b6a26xqocr8wh" path="res://scenes/environment/fire.tscn" id="9_e24dv"]
 
 [sub_resource type="Sky" id="Sky_kps3k"]
 sky_material = ExtResource("2_b42dc")
@@ -65,7 +67,7 @@ shape_spec = {
 [node name="ControllerTestLevel" type="Node3D" unique_id=795995372]
 
 [node name="PlayerCharacter" parent="." unique_id=55011062 instance=ExtResource("4_b42dc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.86041, 1, -164.66275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.542755, 1, -164.31575)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1019091889 groups=["time_pickup"]]
 environment = SubResource("Environment_0yd1l")
@@ -80,3 +82,12 @@ collision_mode = 2
 
 [node name="WaterPickup" parent="." unique_id=1019336120 instance=ExtResource("9_3mkhn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.839718, 0.60992604, -171.52774)
+
+[node name="LargeWaterPickup" parent="." unique_id=930654209 instance=ExtResource("8_5shsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.796474, 0.60992646, -182.83926)
+
+[node name="SmallWaterPickup" parent="." unique_id=879838632 instance=ExtResource("9_3mkhn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.168304, 0.609926, -193.61464)
+
+[node name="Fire" parent="." unique_id=1400787278 instance=ExtResource("9_e24dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.668213, 1.3947825, -178.05817)
