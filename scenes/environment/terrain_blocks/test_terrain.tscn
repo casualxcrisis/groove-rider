@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dtafv76dbde2a"]
+
+[ext_resource type="PackedScene" uid="uid://wh60sn432hyl" path="res://scenes/environment/trees/live_birch_1.tscn" id="1_wdqpm"]
+[ext_resource type="PackedScene" uid="uid://dafb8hsrit7yi" path="res://scenes/environment/fire/big_fire.tscn" id="2_ye57k"]
+[ext_resource type="PackedScene" uid="uid://ctdbmygbjoy87" path="res://scenes/environment/fire/small_fire.tscn" id="3_rytdc"]
+[ext_resource type="PackedScene" uid="uid://bpql52qj7vm4l" path="res://scenes/pickups/large_water_pickup.tscn" id="4_frgu3"]
+[ext_resource type="PackedScene" uid="uid://dhur0b4l8j6ni" path="res://scenes/pickups/small_water_pickup.tscn" id="5_23lwj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0yd1l"]
+size = Vector2(15.775, 40.215)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kps3k"]
+size = Vector3(15.991501, 0.5118408, 40.184998)
+
+[node name="TestTerrain" type="MeshInstance3D" unique_id=1527881491]
+mesh = SubResource("PlaneMesh_0yd1l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1121780811]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1408949501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30382538, -0.24407959, -0.027191162)
+shape = SubResource("BoxShape3D_kps3k")
+
+[node name="LiveBirch1" parent="." unique_id=422865824 instance=ExtResource("1_wdqpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5071573, 0.5443725, 12.018171)
+
+[node name="LiveBirch2" parent="." unique_id=168788636 instance=ExtResource("1_wdqpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5561256, 0.5443725, 0.8764343)
+
+[node name="LiveBirch3" parent="." unique_id=1833397603 instance=ExtResource("1_wdqpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.319494, 0.5443725, 18.435469)
+
+[node name="LiveBirch4" parent="." unique_id=538735462 instance=ExtResource("1_wdqpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.403207, 0.54437274, -7.206766)
+
+[node name="BigFire" parent="." unique_id=1334054306 instance=ExtResource("2_ye57k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6730075, 1.3936787, 17.325619)
+
+[node name="SmallFire" parent="." unique_id=397814172 instance=ExtResource("3_rytdc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6192513, 1.7519188, 0.72886276)
+
+[node name="LargeWaterPickup" parent="." unique_id=1019336120 instance=ExtResource("4_frgu3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.820431, 0.5, -3.6483116)
+
+[node name="LiveBirch5" parent="." unique_id=1705379994 instance=ExtResource("1_wdqpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7860813, 0.54437274, 6.468935)
+
+[node name="LiveBirch6" parent="." unique_id=159906668 instance=ExtResource("1_wdqpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4612856, 0.54437226, 6.890362)
+
+[node name="LiveBirch7" parent="." unique_id=36766389 instance=ExtResource("1_wdqpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0646935, 0.54437274, -8.212856)
+
+[node name="SmallFire2" parent="." unique_id=207749762 instance=ExtResource("3_rytdc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7963514, 0.1979413, -7.665737)
+
+[node name="SmallWaterPickup" parent="." unique_id=2103273466 instance=ExtResource("5_23lwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2416828, 0.6098795, -17.704983)
