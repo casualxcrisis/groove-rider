@@ -1,0 +1,79 @@
+[gd_scene format=4 uid="uid://drunhd6ftq81o"]
+
+[ext_resource type="Material" uid="uid://b7y3g55sx0b2s" path="res://assets/textures/low-qual-floor.tres" id="1_j3utn"]
+[ext_resource type="PackedScene" uid="uid://wh60sn432hyl" path="res://scenes/environment/trees/live_birch_1.tscn" id="2_j0phn"]
+[ext_resource type="PackedScene" uid="uid://dafb8hsrit7yi" path="res://scenes/environment/fire/big_fire.tscn" id="3_hrms7"]
+[ext_resource type="PackedScene" uid="uid://ctdbmygbjoy87" path="res://scenes/environment/fire/small_fire.tscn" id="4_1mwp6"]
+[ext_resource type="PackedScene" uid="uid://bpql52qj7vm4l" path="res://scenes/pickups/large_water_pickup.tscn" id="5_1jeku"]
+[ext_resource type="PackedScene" uid="uid://dhur0b4l8j6ni" path="res://scenes/pickups/small_water_pickup.tscn" id="6_j0phn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e24dv"]
+load_path = "res://.godot/imported/Forest_Floor_wgssecb_1K_BaseColor.jpg-a34f998fca6f5ce3b126fc93dcd22fbd.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qatqk"]
+load_path = "res://.godot/imported/Forest_Floor_wgssecb_1K_Roughness.jpg-9d50d231dd755eaadc4afb26fe433f74.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlhk7"]
+albedo_texture = SubResource("CompressedTexture2D_e24dv")
+roughness_texture = SubResource("CompressedTexture2D_qatqk")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e24dv"]
+lightmap_size_hint = Vector2i(202, 82)
+_surfaces = [{
+"aabb": AABB(-7.5, 0, -36.5, 16, 1e-05, 40),
+"attribute_data": PackedByteArray("/////wAA8MAAAGBAyF1/P2Rwfj//////AADwwAAAEsLDNyI7ZHB+P/////8AAAhBAAASwsM3IjsMzsc7/////wAACEEAAGBAyF1/PwzOxzs="),
+"format": 34359742527,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_xlhk7"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AADwwAAAAAAAAGBAAADwwAAAAAAAABLCAAAIQQAAAAAAABLCAAAIQQAAAAAAAGBAAID//////78AgP//////vwCA//////+/AID//////78=")
+}]
+metadata/ub_uv2_texel = 0.2
+metadata/ub_uv2_scale = Vector3(1, 1, 1)
+metadata/ub_compile_hash = 1659963645
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b42dc"]
+data = PackedVector3Array(-8, -5e-06, 20, -8, -5e-06, -20, 8, -5e-06, -20, 8, -5e-06, -20, 8, -5e-06, 20, -8, -5e-06, 20)
+
+[node name="Terrain2" type="MeshInstance3D" unique_id=1080728070]
+material_override = ExtResource("1_j3utn")
+mesh = SubResource("ArrayMesh_e24dv")
+
+[node name="_UBCollision" type="StaticBody3D" parent="." unique_id=289922303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 5e-06, -16.5)
+
+[node name="Shape" type="CollisionShape3D" parent="_UBCollision" unique_id=1801466992]
+shape = SubResource("ConcavePolygonShape3D_b42dc")
+
+[node name="LiveBirch1" parent="." unique_id=422865824 instance=ExtResource("2_j0phn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02048397, 0.5443725, 0.8432746)
+
+[node name="LiveBirch2" parent="." unique_id=164946477 instance=ExtResource("2_j0phn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5561256, 0.5443725, -15.787369)
+
+[node name="LiveBirch3" parent="." unique_id=141946411 instance=ExtResource("2_j0phn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18527502, 0.5443725, -13.741817)
+
+[node name="LiveBirch4" parent="." unique_id=1647123003 instance=ExtResource("2_j0phn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.403207, 0.54437274, -23.87057)
+
+[node name="BigFire" parent="." unique_id=1334054306 instance=ExtResource("3_hrms7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2663598, 1.420126, -25.637941)
+
+[node name="SmallFire" parent="." unique_id=1520713033 instance=ExtResource("4_1mwp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6192513, 1.7519188, -15.93494)
+
+[node name="LargeWaterPickup" parent="." unique_id=1019336120 instance=ExtResource("5_1jeku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11784077, 1.0178821, -4.6857204)
+
+[node name="SmallWaterPickup" parent="." unique_id=1146105079 instance=ExtResource("6_j0phn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.612302, 0.7677531, -12.06263)
+
+[node name="SmallWaterPickup2" parent="." unique_id=1590202981 instance=ExtResource("6_j0phn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.919423, 1.4191427, -19.65266)
+
+[node name="SmallFire2" parent="." unique_id=1963432489 instance=ExtResource("4_1mwp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7803173, 1.5603974, -15.814129)

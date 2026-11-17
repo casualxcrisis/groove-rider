@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://w432ihh47w5h" path="res://scenes/player/player_character.tscn" id="4_b42dc"]
 [ext_resource type="PackedScene" uid="uid://bpql52qj7vm4l" path="res://scenes/pickups/large_water_pickup.tscn" id="8_5shsf"]
 [ext_resource type="PackedScene" uid="uid://dhur0b4l8j6ni" path="res://scenes/pickups/small_water_pickup.tscn" id="9_3mkhn"]
-[ext_resource type="PackedScene" uid="uid://ctdbmygbjoy87" path="res://scenes/environment/small_fire.tscn" id="9_e24dv"]
-[ext_resource type="PackedScene" uid="uid://dafb8hsrit7yi" path="res://scenes/environment/big_fire.tscn" id="10_e24dv"]
+[ext_resource type="PackedScene" uid="uid://ctdbmygbjoy87" path="res://scenes/environment/fire/small_fire.tscn" id="9_e24dv"]
+[ext_resource type="PackedScene" uid="uid://dafb8hsrit7yi" path="res://scenes/environment/fire/big_fire.tscn" id="10_e24dv"]
 
 [node name="ControllerTestLevel" type="Node3D" unique_id=795995372]
 
