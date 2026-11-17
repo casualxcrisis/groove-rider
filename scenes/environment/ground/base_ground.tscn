@@ -1,0 +1,44 @@
+[gd_scene format=4 uid="uid://ce8vyb6pdnf8f"]
+
+[ext_resource type="Material" uid="uid://b7y3g55sx0b2s" path="res://assets/textures/low-qual-floor.tres" id="1_8uv0f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e24dv"]
+load_path = "res://.godot/imported/Forest_Floor_wgssecb_1K_BaseColor.jpg-a34f998fca6f5ce3b126fc93dcd22fbd.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qatqk"]
+load_path = "res://.godot/imported/Forest_Floor_wgssecb_1K_Roughness.jpg-9d50d231dd755eaadc4afb26fe433f74.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlhk7"]
+albedo_texture = SubResource("CompressedTexture2D_e24dv")
+roughness_texture = SubResource("CompressedTexture2D_qatqk")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e24dv"]
+lightmap_size_hint = Vector2i(202, 82)
+_surfaces = [{
+"aabb": AABB(-7.5, 0, -36.5, 16, 1e-05, 40),
+"attribute_data": PackedByteArray("/////wAA8MAAAGBAyF1/P2Rwfj//////AADwwAAAEsLDNyI7ZHB+P/////8AAAhBAAASwsM3IjsMzsc7/////wAACEEAAGBAyF1/PwzOxzs="),
+"format": 34359742527,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_xlhk7"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AADwwAAAAAAAAGBAAADwwAAAAAAAABLCAAAIQQAAAAAAABLCAAAIQQAAAAAAAGBAAID//////78AgP//////vwCA//////+/AID//////78=")
+}]
+metadata/ub_uv2_texel = 0.2
+metadata/ub_uv2_scale = Vector3(1, 1, 1)
+metadata/ub_compile_hash = 1659963645
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b42dc"]
+data = PackedVector3Array(-8, -5e-06, 20, -8, -5e-06, -20, 8, -5e-06, -20, 8, -5e-06, -20, 8, -5e-06, 20, -8, -5e-06, 20)
+
+[node name="BaseGround" type="MeshInstance3D" unique_id=1080728070]
+material_override = ExtResource("1_8uv0f")
+mesh = SubResource("ArrayMesh_e24dv")
+
+[node name="_UBCollision" type="StaticBody3D" parent="." unique_id=289922303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 5e-06, -16.5)
+
+[node name="Shape" type="CollisionShape3D" parent="_UBCollision" unique_id=1801466992]
+shape = SubResource("ConcavePolygonShape3D_b42dc")

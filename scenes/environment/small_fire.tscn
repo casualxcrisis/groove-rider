@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bnuks2lu6rr6j" path="res://assets/sounds/612277__robinhood76__10835-big-fire-loop.wav" id="3_8472u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0yd1l"]
-size = Vector3(0.52490234, 2.5565186, 1.907608)
+size = Vector3(0.52490234, 2.5565186, 2.6715631)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cu4ke"]
 seed = 55
@@ -31,7 +31,7 @@ size = Vector2(3.585, 4.73)
 [node name="SmallFire" type="StaticBody3D" unique_id=1334054306 groups=["small_fire"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1660516178]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012207031, 1.0326538, -0.005897522)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012207031, 1.0326538, -0.07570124)
 shape = SubResource("BoxShape3D_0yd1l")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1887349344]
@@ -46,3 +46,12 @@ mesh = SubResource("QuadMesh_0yd1l")
 stream = ExtResource("3_8472u")
 volume_db = -17.944
 autoplay = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1467029187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5036025, 0)
+light_color = Color(1, 0.3882353, 0.2784314, 1)
+light_energy = 2.406
+light_indirect_energy = 2.186
+light_volumetric_fog_energy = 3.988
+light_size = 0.361
+omni_range = 2.064

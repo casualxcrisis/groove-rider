@@ -1,7 +1,7 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ck1v04bair5y4"]
 
-[ext_resource type="Shader" path="res://addons/psx_skyboxes_2/psx_sky.gdshader" id="1"]
-[ext_resource type="CompressedCubemap" path="res://addons/psx_skyboxes_2/cubemaps/hell_red.png" id="2"]
+[ext_resource type="Shader" uid="uid://xsq6ichentgt" path="res://addons/psx_skyboxes_2/psx_sky.gdshader" id="1"]
+[ext_resource type="CompressedCubemap" uid="uid://c822jk56lkp8" path="res://addons/psx_skyboxes_2/cubemaps/hell_red.png" id="2"]
 
 [resource]
 resource_name = "hell_red"

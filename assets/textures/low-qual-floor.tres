@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b7y3g55sx0b2s"]
+
+[ext_resource type="Texture2D" uid="uid://ydig1kdrqb4p" path="res://assets/textures/Dirt_05/Dirt_05_basecolor.png" id="1_tn6nf"]
+[ext_resource type="Texture2D" uid="uid://rrmo2f5sqdi0" path="res://assets/textures/Dirt_05/Dirt_05_height.png" id="2_oiq1r"]
+[ext_resource type="Texture2D" uid="uid://bnopt87sibv55" path="res://assets/textures/Dirt_05/Dirt_05_metallic.png" id="3_ytx0c"]
+[ext_resource type="Texture2D" uid="uid://qps5djvfqnsg" path="res://assets/textures/Dirt_05/Dirt_05_normal.png" id="4_xhf67"]
+
+[resource]
+albedo_texture = ExtResource("1_tn6nf")
+metallic = 1.0
+metallic_texture = ExtResource("3_ytx0c")
+normal_enabled = true
+normal_texture = ExtResource("4_xhf67")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_oiq1r")
+uv1_scale = Vector3(0.47, 0.47, 0.47)

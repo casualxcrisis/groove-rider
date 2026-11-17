@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://wh60sn432hyl"]
+
+[ext_resource type="ArrayMesh" uid="uid://bs8gtnwdpkpp5" path="res://assets/models/lowPolyNature/BirchTree_1.obj" id="1_auifa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0yd1l"]
+size = Vector3(1, 2.1225586, 2.0352783)
+
+[node name="LiveBirch1" type="StaticBody3D" unique_id=422865824]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=123557313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.53829074, 0)
+mesh = ExtResource("1_auifa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2039529334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5612793, -0.51763916)
+shape = SubResource("BoxShape3D_0yd1l")

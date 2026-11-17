@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cn2bkf3yrc4xm"]
+
+[ext_resource type="Material" uid="uid://ck1v04bair5y4" path="res://addons/psx_skyboxes_2/materials/cube/hell_red.tres" id="1_r6rh3"]
+
+[sub_resource type="Sky" id="Sky_kps3k"]
+sky_material = ExtResource("1_r6rh3")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_0yd1l"]
+background_mode = 2
+background_energy_multiplier = 2.38
+sky = SubResource("Sky_kps3k")
+ambient_light_sky_contribution = 0.5
+tonemap_mode = 3
+fog_enabled = true
+fog_light_color = Color(1, 0.80538714, 0.7547245, 1)
+fog_light_energy = 0.21
+fog_density = 0.0
+fog_aerial_perspective = 0.046
+fog_sky_affect = 0.904
+volumetric_fog_enabled = true
+volumetric_fog_density = 1.0
+volumetric_fog_length = 256.0
+volumetric_fog_sky_affect = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=931535047 groups=["time_pickup"]]
+environment = SubResource("Environment_0yd1l")
