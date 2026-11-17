@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dh8tsqdv0rudy"
+path="res://.godot/imported/Fire Trance_70 BPM_Only Percussion_Loop.wav-341c0a8b9518145ca21c2e98b0cb7296.sample"
+
+[deps]
+
+source_file="res://assets/music/Fire Trance_70 BPM_Only Percussion_Loop.wav"
+dest_files=["res://.godot/imported/Fire Trance_70 BPM_Only Percussion_Loop.wav-341c0a8b9518145ca21c2e98b0cb7296.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

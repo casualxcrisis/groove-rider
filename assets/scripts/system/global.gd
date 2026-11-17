@@ -5,7 +5,7 @@ var fwd_speed = -8
 var fall_accel = 65
 var jump_force = 15
 var grav_scale = 1
-var steer_speed = -8
+var steer_speed = -10
 
 ###Resources and Score###
 var water_lvl = 0

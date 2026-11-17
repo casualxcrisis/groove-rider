@@ -22,6 +22,12 @@ func _on_hurt_pickup_zone_body_entered(body: Node3D) -> void:
 		%GameTimer.start(%GameTimer.time_left + Global.small_water)
 		body.queue_free()
 	elif body.is_in_group("small_fire"):
+		%FireExtinguish.play()
 		%GameTimer.start(%GameTimer.time_left - Global.small_fire_cost)
 		Global.fire_score += Global.small_fire_pts
+		body.queue_free()
+	elif body.is_in_group("big_fire"):
+		%FireExtinguish.play()
+		%GameTimer.start(%GameTimer.time_left - Global.big_fire_cost)
+		Global.fire_score += Global.big_fire_pts
 		body.queue_free()

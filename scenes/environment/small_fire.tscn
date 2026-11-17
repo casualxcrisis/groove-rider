@@ -2,9 +2,10 @@
 
 [ext_resource type="Shader" uid="uid://ofag0e4f06xs" path="res://assets/shaders/fire.gdshader" id="1_mlu7p"]
 [ext_resource type="Texture2D" uid="uid://c3f2qasjwc8ro" path="res://assets/placeholder_images/flame.png" id="2_8472u"]
+[ext_resource type="AudioStream" uid="uid://bnuks2lu6rr6j" path="res://assets/sounds/612277__robinhood76__10835-big-fire-loop.wav" id="3_8472u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0yd1l"]
-size = Vector3(0.52490234, 0.74560547, 0.5008545)
+size = Vector3(0.52490234, 2.5565186, 1.907608)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cu4ke"]
 seed = 55
@@ -25,12 +26,23 @@ shader_parameter/resolution = 64.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_0yd1l"]
 material = SubResource("ShaderMaterial_kps3k")
+size = Vector2(3.585, 4.73)
 
 [node name="SmallFire" type="StaticBody3D" unique_id=1334054306 groups=["small_fire"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1660516178]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012207031, 0.12719727, 0.0012817383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012207031, 1.0326538, -0.005897522)
+shape = SubResource("BoxShape3D_0yd1l")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1887349344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012207031, 1.0326538, -0.005897522)
 shape = SubResource("BoxShape3D_0yd1l")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=934497530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94054085, 0)
 mesh = SubResource("QuadMesh_0yd1l")
+
+[node name="FireSound" type="AudioStreamPlayer3D" parent="." unique_id=1869532075]
+stream = ExtResource("3_8472u")
+volume_db = -17.944
+autoplay = true

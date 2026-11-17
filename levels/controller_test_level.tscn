@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bpql52qj7vm4l" path="res://scenes/pickups/large_water_pickup.tscn" id="8_5shsf"]
 [ext_resource type="PackedScene" uid="uid://dhur0b4l8j6ni" path="res://scenes/pickups/small_water_pickup.tscn" id="9_3mkhn"]
 [ext_resource type="PackedScene" uid="uid://ctdbmygbjoy87" path="res://scenes/environment/small_fire.tscn" id="9_e24dv"]
+[ext_resource type="PackedScene" uid="uid://dafb8hsrit7yi" path="res://scenes/environment/big_fire.tscn" id="10_e24dv"]
 
 [sub_resource type="Sky" id="Sky_kps3k"]
 sky_material = ExtResource("2_b42dc")
@@ -81,13 +82,16 @@ mesh_data = SubResource("Resource_qatqk")
 collision_mode = 2
 
 [node name="WaterPickup" parent="." unique_id=1019336120 instance=ExtResource("9_3mkhn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.839718, 0.60992604, -171.52774)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.839718, 0.91105443, -171.52774)
 
 [node name="LargeWaterPickup" parent="." unique_id=930654209 instance=ExtResource("8_5shsf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.796474, 0.60992646, -182.83926)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.993408, 1.186698, -182.83926)
 
 [node name="SmallWaterPickup" parent="." unique_id=879838632 instance=ExtResource("9_3mkhn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.168304, 0.609926, -193.61464)
 
+[node name="BigFire" parent="." unique_id=1467934660 instance=ExtResource("10_e24dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.698784, 1.4710783, -182.05943)
+
 [node name="SmallFire" parent="." unique_id=1334054306 instance=ExtResource("9_e24dv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0.5149598, -179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.878633, 0.32726836, -176.77858)

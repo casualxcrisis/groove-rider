@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://c3cyq4nr5ns62" path="res://assets/textures/Prototyping Textures (32px)/Prototype_blue_32x32px.png" id="3_wvac4"]
 [ext_resource type="Script" uid="uid://cigrwo84hcrnf" path="res://assets/scripts/ui/water_lvl_bar.gd" id="4_wvac4"]
 [ext_resource type="AudioStream" uid="uid://bi58fcg8tpsrd" path="res://assets/sounds/water_drop.wav" id="8_ryjgy"]
+[ext_resource type="AudioStream" uid="uid://dmjei127rhsvr" path="res://assets/sounds/fire_out.wav" id="9_wvac4"]
+[ext_resource type="AudioStream" uid="uid://dkeryojcc7t7g" path="res://assets/sounds/636917__newlocknew__fireburn_big-fire-in-the-forestartificial_em_34lrs.wav" id="10_t1eku"]
+[ext_resource type="AudioStream" uid="uid://d0iug446knrqg" path="res://assets/music/Fire Trance_70 BPM_Loop.wav" id="11_gr6m2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kps3k"]
 
@@ -83,5 +86,20 @@ debug_color = Color(0.9600989, 0.19265047, 0.15705389, 0.41960785)
 unique_name_in_owner = true
 stream = ExtResource("8_ryjgy")
 volume_db = -28.396
+
+[node name="FireExtinguish" type="AudioStreamPlayer3D" parent="." unique_id=1790156982]
+unique_name_in_owner = true
+stream = ExtResource("9_wvac4")
+volume_db = -5.614
+
+[node name="BackgroundFire" type="AudioStreamPlayer3D" parent="." unique_id=1993380007]
+stream = ExtResource("10_t1eku")
+volume_db = -30.877
+autoplay = true
+
+[node name="Music" type="AudioStreamPlayer3D" parent="." unique_id=2147180930]
+stream = ExtResource("11_gr6m2")
+volume_db = -40.403
+autoplay = true
 
 [connection signal="body_entered" from="HurtPickupZone" to="PlayerVision/InGameUI/WaterLvlHUD/GameTimer" method="_on_hurt_pickup_zone_body_entered"]
