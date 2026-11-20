@@ -21,7 +21,7 @@ void fragment() {
 	float time_seed = (NODE_POSITION_WORLD.x + NODE_POSITION_WORLD.y + NODE_POSITION_WORLD.z);
 	float frame_time = floor(TIME * framerate) / framerate;
 	float time = (frame_time * 10.0) + time_seed;
-	float noise_time = (frame_time * 1.0) + time_seed;
+	float noise_time = (frame_time * 1.0);
 
     float noise = texture(noise_texture, flame_uv + vec2(sin(noise_time + vertical_intensity * 10.0) * 0.1, noise_time)).r;
     float normal_noise = noise - 0.5;

@@ -11,15 +11,15 @@ class_name TerrainController
 var TerrainBlocks: Array = []
 ## The set of terrian blocks which are currently rendered to viewport
 var terrain_belt: Array[MeshInstance3D] = []
-@export var terrain_velocity: float = 10.0
+@export var terrain_velocity: float = 15.0
 ## The number of blocks to keep rendered to the viewport
 @export var num_terrain_blocks = 10
 ## Path to directory holding the terrain block scenes
-@export_dir var terrian_blocks_path = "res://scenes/environment/terrain_blocks/"
+@export_dir var terrain_blocks_path = "res://scenes/environment/terrain_blocks/"
 
 
 func _ready() -> void:
-	_load_terrain_scenes(terrian_blocks_path)
+	_load_terrain_scenes(terrain_blocks_path)
 	_init_blocks(num_terrain_blocks)
 
 
@@ -60,5 +60,5 @@ func _append_to_far_edge(target_block: MeshInstance3D, appending_block: MeshInst
 func _load_terrain_scenes(target_path: String) -> void:
 	var dir = DirAccess.open(target_path)
 	for scene_path in dir.get_files():
-		print("Loading terrian block scene: " + target_path + "/" + scene_path)
+		print("Loading terrain block scene: " + target_path + "/" + scene_path)
 		TerrainBlocks.append(load(target_path + "/" + scene_path))
