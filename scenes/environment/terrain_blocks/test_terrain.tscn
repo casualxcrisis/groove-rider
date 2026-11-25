@@ -10,7 +10,7 @@
 size = Vector2(15.775, 40.215)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kps3k"]
-size = Vector3(15.991501, 0.5118408, 40.184998)
+size = Vector3(16.224754, 0.5118408, 40.262497)
 
 [node name="TestTerrain" type="MeshInstance3D" unique_id=1527881491]
 mesh = SubResource("PlaneMesh_0yd1l")
@@ -18,7 +18,7 @@ mesh = SubResource("PlaneMesh_0yd1l")
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1121780811]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1408949501]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30382538, -0.24407959, -0.027191162)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18719864, -0.24407959, -0.012077332)
 shape = SubResource("BoxShape3D_kps3k")
 
 [node name="LiveBirch1" parent="." unique_id=422865824 instance=ExtResource("1_wdqpm")]

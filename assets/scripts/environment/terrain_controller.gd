@@ -1,5 +1,5 @@
 extends Node3D
-class_name TerrainController
+class_name TerrainController3D
 ## This builds and operates the terrain "conveyor belt"
 ##
 ## A set of randomly choosen terrain blocks is rendered to the viewport.
