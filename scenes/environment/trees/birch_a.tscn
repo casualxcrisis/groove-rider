@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ug2josfu4df1"]
+
+[ext_resource type="PackedScene" uid="uid://c4nkq5sjy68i7" path="res://assets/models/Vegetation/Trees/Birch_A.glb" id="1_v0iyf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0yd1l"]
+radius = 0.18701172
+height = 2.4648438
+
+[node name="BirchA" type="StaticBody3D" unique_id=876548883 groups=["death_obstacle"]]
+
+[node name="Birch_A" parent="." unique_id=986137451 instance=ExtResource("1_v0iyf")]
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, -4.42376, 0.0037014484, 8.477219)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=862254836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21124622, 1.1560851, 0.08363727)
+shape = SubResource("CapsuleShape3D_0yd1l")
+debug_color = Color(0.9514479, 0.21990731, 0.08271069, 0.41960785)

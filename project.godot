@@ -35,6 +35,7 @@ big_water=""
 small_water=""
 big_fire=""
 small_fire=""
+death_obstacle=""
 
 [input]
 

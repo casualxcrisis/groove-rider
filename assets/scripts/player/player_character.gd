@@ -1,28 +1,18 @@
 extends CharacterBody3D
 
 ###Movement###
-var speed = Global.fwd_speed
 var fall_accel = Global.fall_accel
 var jump_force = Global.jump_force
-var grav_scale = Global.grav_scale
 var steer_speed = Global.steer_speed
 var target_velocity = Vector3.ZERO
-
-var start_buffer = false
 
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	#implement real countdown timer with timeout being the beginning of the movement/level
-	#await get_tree().create_timer(5).timeout
-	#start_buffer = true
 
 func _physics_process(delta: float) -> void:
 	velocity = target_velocity
 	velocity.x = %PlayerVision.rotation.y * steer_speed
-	#if start_buffer:
-		#velocity.z = speed
-		
 	
 	if %PlayerVision.rotation.y > deg_to_rad(10):
 		%PlayerVision.rotation.z = lerp(%PlayerVision.rotation.z, deg_to_rad(12.4), deg_to_rad(1.0))

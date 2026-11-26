@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ceick0c6c3djq"]
+
+[ext_resource type="PackedScene" uid="uid://c2sq4uvcvqww1" path="res://assets/models/Vegetation/Trees/Eucalyptus_A.glb" id="1_wl4tr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0yd1l"]
+radius = 0.23925781
+height = 3.2041016
+
+[node name="EucalyptusA" type="StaticBody3D" unique_id=1417729651 groups=["death_obstacle"]]
+
+[node name="Eucalyptus_A" parent="." unique_id=1086204631 instance=ExtResource("1_wl4tr")]
+transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, -2.7481742, -0.061839223, 8.409586)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1365980235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045265794, 1.4818453, 0)
+shape = SubResource("CapsuleShape3D_0yd1l")
+debug_color = Color(0.9529412, 0.21960784, 0.08235294, 0.41960785)

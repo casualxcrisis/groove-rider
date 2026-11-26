@@ -15,19 +15,33 @@ func _process(_delta: float) -> void:
 func _on_hurt_pickup_zone_body_entered(body: Node3D) -> void:
 	if body.is_in_group("big_water"):
 		%WaterSound.play()
-		%GameTimer.start(%GameTimer.time_left + Global.big_water)
+		if Global.water_mult_bool:
+			%GameTimer.start(%GameTimer.time_left + (Global.big_water * 2))
+		else:
+			%GameTimer.start(%GameTimer.time_left + Global.big_water)
 		body.queue_free()
 	elif body.is_in_group("small_water"):
 		%WaterSound.play()
-		%GameTimer.start(%GameTimer.time_left + Global.small_water)
+		if Global.water_mult_bool:
+			%GameTimer.start(%GameTimer.time_left + (Global.small_water * 2))
+		else:
+			%GameTimer.start(%GameTimer.time_left + Global.small_water)
 		body.queue_free()
 	elif body.is_in_group("small_fire"):
 		%FireExtinguish.play()
+		if Global.score_mult_bool:
+			Global.fire_score += (Global.small_fire_pts * 2)
+		else:
+			Global.fire_score += Global.small_fire_pts
 		%GameTimer.start(%GameTimer.time_left - Global.small_fire_cost)
-		Global.fire_score += Global.small_fire_pts
 		body.queue_free()
 	elif body.is_in_group("big_fire"):
 		%FireExtinguish.play()
+		if Global.score_mult_bool:
+			Global.fire_score += (Global.big_fire_pts * 2)
+		else:
+			Global.fire_score += Global.big_fire_pts
 		%GameTimer.start(%GameTimer.time_left - Global.big_fire_cost)
-		Global.fire_score += Global.big_fire_pts
 		body.queue_free()
+	elif body.is_in_group("death_obstacle"):
+		get_tree().change_scene_to_file("res://levels/temp_game_over.tscn")

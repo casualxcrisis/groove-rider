@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjkk2suyjxina" path="res://assets/scripts/pickups/water_pickup.gd" id="1_n6dcp"]
 [ext_resource type="Shader" uid="uid://cy4b8xm5stbpv" path="res://assets/shaders/toon_water.gdshader" id="2_4upxr"]
+[ext_resource type="Shader" uid="uid://buh0meu1isj1y" path="res://assets/shaders/shimmer.gdshader" id="3_omyy4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kps3k"]
 render_priority = 0
@@ -38,6 +39,41 @@ radius = 0.805
 [sub_resource type="SphereShape3D" id="SphereShape3D_0yd1l"]
 radius = 0.74156106
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u7mw5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cu4ke"]
+noise = SubResource("FastNoiseLite_u7mw5")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sc5ad"]
+render_priority = 0
+shader = ExtResource("3_omyy4")
+shader_parameter/color = Color(0, 0.49485648, 0.62347746, 1)
+shader_parameter/color_edge = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 9.3010004417975
+shader_parameter/rise_progress = 0.5590000265525
+shader_parameter/edge_width = 0.08
+shader_parameter/noise_scale = 5.12900024036762
+shader_parameter/noise_strength = 0.3600000171
+shader_parameter/time_speed = 5.0
+shader_parameter/fade_softness = 0.1
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_cu4ke")
+shader_parameter/top_fade_start = 0.3
+shader_parameter/top_fade_power = 2.0
+shader_parameter/invert_top_fade = false
+shader_parameter/wave_transparency = 0.5
+shader_parameter/wave_frequency = 8.0
+shader_parameter/wave_speed = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kps3k"]
+material = SubResource("ShaderMaterial_sc5ad")
+top_radius = 0.53564453
+bottom_radius = 0.53564453
+height = 1.9788818
+cap_top = false
+cap_bottom = false
+
 [node name="SmallWaterPickup" type="RigidBody3D" unique_id=1019336120 groups=["small_water"]]
 script = ExtResource("1_n6dcp")
 
@@ -54,3 +90,7 @@ shape = SubResource("SphereShape3D_xy0ms")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040204465, -0.061888665, 0)
 shape = SubResource("SphereShape3D_0yd1l")
 debug_color = Color(0.99107593, 0, 0.27616704, 0.41960785)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1757566022]
+transform = Transform3D(0.9999779, -0.00077194814, -0.0066092275, 0.0006542635, 0.99984145, -0.01779154, 0.0066219163, 0.017786823, 0.9998198, -0.00026700622, -0.0106138885, 0.0061522173)
+mesh = SubResource("CylinderMesh_kps3k")

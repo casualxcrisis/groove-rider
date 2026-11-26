@@ -3,18 +3,17 @@
 [ext_resource type="Script" uid="uid://dnndnr36m6g7m" path="res://assets/scripts/player/player_character.gd" id="1_auamg"]
 [ext_resource type="FontFile" uid="uid://cxs2e8e30jdmp" path="res://assets/fonts/Not Jam Signature 21.ttf" id="2_0icub"]
 [ext_resource type="Script" uid="uid://cg5ait4a70cq" path="res://assets/scripts/system/game_timer.gd" id="2_eebfp"]
-[ext_resource type="Texture2D" uid="uid://bq77qhbmwi0ns" path="res://assets/textures/Prototyping Textures (32px)/Prototype_checkers_01_32x32px.png" id="2_ryjgy"]
 [ext_resource type="Script" uid="uid://ba1fikwa47tcx" path="res://assets/scripts/ui/fire_score_hud.gd" id="2_s66ro"]
-[ext_resource type="Texture2D" uid="uid://c3cyq4nr5ns62" path="res://assets/textures/Prototyping Textures (32px)/Prototype_blue_32x32px.png" id="3_wvac4"]
 [ext_resource type="Script" uid="uid://cigrwo84hcrnf" path="res://assets/scripts/ui/water_lvl_bar.gd" id="4_wvac4"]
 [ext_resource type="Shader" uid="uid://cvs1l6funi6ld" path="res://assets/shaders/crt.gdshader" id="8_gr6m2"]
 [ext_resource type="AudioStream" uid="uid://bi58fcg8tpsrd" path="res://assets/sounds/water_drop.wav" id="8_ryjgy"]
 [ext_resource type="AudioStream" uid="uid://dmjei127rhsvr" path="res://assets/sounds/fire_out.wav" id="9_wvac4"]
-[ext_resource type="AudioStream" uid="uid://dkeryojcc7t7g" path="res://assets/sounds/636917__newlocknew__fireburn_big-fire-in-the-forestartificial_em_34lrs.wav" id="10_t1eku"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kps3k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0yd1l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ifuus"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0yd1l"]
 shader = ExtResource("8_gr6m2")
@@ -51,20 +50,21 @@ far = 600.0
 [node name="InGameUI" type="Control" parent="PlayerVision/CanvasLayer" unique_id=1354605619]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 568.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 608.0
 
 [node name="WaterLvlHUD" type="TextureProgressBar" parent="PlayerVision/CanvasLayer/InGameUI" unique_id=1751432843]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 945.0
+offset_left = 544.0
 offset_top = 4.0
-offset_right = 1116.27
+offset_right = 715.27
 offset_bottom = 44.0
+max_value = 30.0
 rounded = true
 nine_patch_stretch = true
-texture_under = ExtResource("2_ryjgy")
-texture_progress = ExtResource("3_wvac4")
+texture_progress = SubResource("CanvasTexture_ifuus")
 script = ExtResource("4_wvac4")
 
 [node name="GameTimer" type="Timer" parent="PlayerVision/CanvasLayer/InGameUI/WaterLvlHUD" unique_id=862255664]
@@ -77,10 +77,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 754.0
-offset_top = 1.0
-offset_right = 799.0
-offset_bottom = 52.0
+offset_left = 225.0
+offset_top = 6.0
+offset_right = 270.0
+offset_bottom = 57.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.8558844, 0.66796803, 0.08358414, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -114,10 +114,5 @@ volume_db = -28.396
 unique_name_in_owner = true
 stream = ExtResource("9_wvac4")
 volume_db = -5.614
-
-[node name="BackgroundFire" type="AudioStreamPlayer3D" parent="." unique_id=1993380007]
-stream = ExtResource("10_t1eku")
-volume_db = -30.877
-autoplay = true
 
 [connection signal="body_entered" from="HurtPickupZone" to="PlayerVision/CanvasLayer/InGameUI/WaterLvlHUD/GameTimer" method="_on_hurt_pickup_zone_body_entered"]
